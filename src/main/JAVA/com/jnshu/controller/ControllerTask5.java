@@ -42,7 +42,7 @@ public class ControllerTask5 {
 
     @RequestMapping("/")
     public String logins(){
-        return "redirect:/login";
+        return "redirect:/home";
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)

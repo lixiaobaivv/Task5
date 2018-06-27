@@ -25,6 +25,13 @@
         <!-- 最大空闲书，数据库连接的最大空闲时间。超过空闲时间，数据库连接将标记不可用，然后被释放，设为0表示无限制-->
         <property name="maxIdle" value="5"/>
     </bean>
+       
+           <!-- 配置事务管理器 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 
     <!-- sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
